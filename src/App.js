@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import { Messege } from './Components/Messege/Messege';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello world!</h1>
+      <Messege />
     </div>
   );
 }
