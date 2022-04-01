@@ -1,6 +1,6 @@
 import React from "react";
 
-import './Messege.css';
+import './Messege.scss';
 
 export const Messege = () => {
   return (

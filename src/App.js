@@ -1,7 +1,7 @@
 import { Form } from './Components/Form/Form';
 import { Messege } from './Components/Messege/Messege';
 
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
