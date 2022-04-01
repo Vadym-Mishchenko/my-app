@@ -1,10 +1,11 @@
-import './App.css';
-import { Form } from './Components/Messege/Form/Form';
+import { Form } from './Components/Form/Form';
 import { Messege } from './Components/Messege/Messege';
+
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Messege />
       <Form />
     </div>
