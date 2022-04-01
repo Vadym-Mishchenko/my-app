@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  display: flex;
+}
+
+.individual {}
+
+.individual__person-data {
+  display: flex;
+}
+
+.individual__town-data {
+  display: flex;
+}
