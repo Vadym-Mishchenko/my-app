@@ -7,8 +7,8 @@ export const Form = () => {
     <div className="form">
       <h2 className="form__title">Заповнiть форму</h2>
       <div className="form__buttons">
-        <button className="buttons__button-individual">Фiз. особа</button>
-        <button className="buttons-button-entity">Юр. особа</button>
+        <button type="button" className="buttons__button-individual">Фiз. особа</button>
+        <button type="button" className="buttons-button-entity">Юр. особа</button>
       </div>
 
       <div className="form__input input">
