@@ -29,7 +29,7 @@
     display: flex;
     column-gap: 18px;
     cursor: pointer;
-    color: #9a9a9c;
+    color: #dbdddd;
 
     transition: all 0.3s;
   }
@@ -41,8 +41,36 @@
   &__type-icon {
     width: 64px;
     height: 64px;
-    border: 1px solid #343d5b;
+    border: 2px solid #e5eaec;
     border-radius: 10px;
+
+    &--do {
+      background-image: url(../../Img/01-do.png);
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--financial {
+      background-image: url(../../Img/02-financial.png);
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--material {
+      background-image: url(../../Img/03-material.png);
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--heart {
+      background-image: url(../../Img/04-heart.png);
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   &__type-icon--active {
@@ -51,11 +79,12 @@
   }
 
   &__type-name {
+    display: flex;
+    align-items: center;
     width: 98px;
     height: 64px;
     font-size: 14px;
     font-weight: 500;
-    line-height: 64px;
   }
 
   &__type-name--active {
@@ -80,6 +109,9 @@
     border: 1px solid #ffffff00;
     border-radius: 6px;
     background: linear-gradient(90deg,#d14959,#b55271 51%,#8c699d);
+    box-shadow: 1px 1px 20px 3px rgba(250,25,25,0.75);
+    -webkit-box-shadow: 1px 1px 20px -2px rgba(250,25,25,0.75);
+    -moz-box-shadow: 1px 1px 20px 3px rgba(250,25,25,0.75);
 
     transition: all 0.3s;
   }
