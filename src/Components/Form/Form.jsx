@@ -1,115 +1,183 @@
 import React, { useState } from "react";
-import cn from 'classnames';
+import classNames from "classnames";
+import { HelpTypes } from "../HelpTypes/HelpTypes";
 
 import './Form.scss';
-import classNames from "classnames";
+
+export const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+export const numberCheck = (event, changer) => {
+  if (event.target.value.split('').every(char => numbers.includes(char))) {
+    changer(event.target.value);
+  }
+};
 
 export const Form = () => {
-  const [buttonPhysicalPerson, setButtonPhysicalPerson] = useState(true);
-  const [buttonEntityPerson, setButtonEntityPerson] = useState(false);
+  const [isPhysicalPerson, setIsPhysicalPerson] = useState(true);
+  const [isEntityPerson, setIsEntityPerson] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [indexNumber, setIndexNumber] = useState('');
 
-  const onClickButtonPhysicalPerson = () => {
-    setButtonEntityPerson(false);
-    setButtonPhysicalPerson(!buttonPhysicalPerson)
-  };
 
-  const onClickButtonEntityPerson = () => {
-    setButtonPhysicalPerson(false);
-    setButtonEntityPerson(!buttonEntityPerson);
+  const resetPerson = () => {
+    setIsPhysicalPerson(false);
+    setIsEntityPerson(false);
   };
 
   return (
-    <div className="form">
-      <h1 className="form__title">Заповнiть форму</h1>
-      <div className="form__buttons buttons">
-        <button
-          type="button"
-          className={cn(
-            "buttons__button",
-            "buttons__button-r",
-            {'buttons__button--active': buttonPhysicalPerson}
-          )}
-          onClick={onClickButtonPhysicalPerson}
-        >
-          Фiз. особа
-        </button>
-  
-        <button
-          type="button"
-          className={classNames(
-            "buttons__button",
-            "buttons__button-l",
-            {'buttons__button--active': buttonEntityPerson}
-          )}
-          onClick={onClickButtonEntityPerson}
+    <form action="#" method="post">
+      <div className="form">
+        <h1 className="form__title">Заповнiть форму</h1>
+        <div className="form__buttons buttons">
+          <button
+            type="button"
+            className={classNames(
+              "buttons__button",
+              "buttons__button-r",
+              { 'buttons__button--active': isPhysicalPerson }
+            )}
+            onClick={() => {
+              if (!isPhysicalPerson) {
+                resetPerson();
+                setIsPhysicalPerson(true);
+              }
+            }}
+          >
+            Фiз. особа
+          </button>
 
-        >
-          Юр. особа
-        </button>
-      </div>
+          <button
+            type="button"
+            className={classNames(
+              "buttons__button",
+              "buttons__button-l",
+              { 'buttons__button--active': isEntityPerson }
+            )}
+            onClick={() => {
+              if (!isEntityPerson) {
+                resetPerson();
+                setIsEntityPerson(true);
+              }
+            }}
+          >
+            Юр. особа
+          </button>
+        </div>
 
-      <div className="form__input input">
-
-        <div className="input__section section">
-          <div className="section__container">
-            <div className="section__container-individ">
-              <p className="section__p">Ім'я</p>
-              <input type="text" className="section__input" />
+        <div className="form__input input">
+          <div className="input__section section">
+            <div className="section__container">
+              <div className="section__container-individ">
+                <p className="section__p">Ім'я</p>
+                <input
+                  className="section__input"
+                  type="text"
+                  required
+                />
+              </div>
+              <div className="section__container-individ">
+                <p className="section__p">Фамiлiя</p>
+                <input
+                  className="section__input"
+                  type="text"
+                  required
+                />
+              </div>
             </div>
+
             <div className="section__container-individ">
-              <p className="section__p">Фамiлiя</p>
-              <input type="text" className="section__input" />
+              <p className="section__p">Назва компанії, організації</p>
+              <input
+                className="section__input"
+                type="text"
+                required
+              />
+            </div>
+
+            <div className="section__container-individ">
+              <p className="section__p">Email-адрес</p>
+              <input
+                className="section__input"
+                type="email"
+                required
+              />
+            </div>
+
+            <div className="section__container-individ">
+              <p className="section__p">Номер телефону</p>
+              <input
+                className="section__input"
+                type="text"
+                required
+                value={phoneNumber}
+                onChange={(event) => {
+                  numberCheck(event, setPhoneNumber)
+                }}
+              />
             </div>
           </div>
 
-          <div className="section__container-individ">
-            <p className="section__p">Назва компанії, організації</p>
-            <input type="text" className="section__input" />
-          </div>
+          <div className="input__section section">
+            <div className="section__container-individ">
+              <p className="section__p">Країна</p>
+              <input
+                className="section__input"
+                type="text"
+                required
+              />
+            </div>
 
-          <div className="section__container-individ">
-            <p className="section__p">Email-адрес</p>
-            <input type="text" className="section__input" />
-          </div>
+            <div className="section__container">
+              <div className="section__container-individ">
+                <p className="section__p">Місто</p>
+                <input
+                  className="section__input"
+                  type="text"
+                  required
+                />
+              </div>
+              <div className="section__container-individ">
+                <p className="section__p">Штат, район</p>
+                <input
+                  className="section__input"
+                  type="text"
+                  required
+                />
+              </div>
+            </div>
 
-          <div className="section__container-individ">
-            <p className="section__p">Номер телефону</p>
-            <input type="text" className="section__input" />
+            <div className="section__container-individ">
+              <p className="section__p">Адреса</p>
+              <input
+                className="section__input"
+                type="text"
+                required
+              />
+            </div>
+
+            <div className="section__container">
+              <div className="section__container-individ">
+                <p className="section__p">Поштовий індекс</p>
+                <input
+                  className="section__input"
+                  type="text"
+                  required
+                  value={indexNumber}
+                  onChange={(event) => {
+                    numberCheck(event, setIndexNumber)
+                  }}
+                />
+              </div>
+              <div className="section__container-individ"></div>
+            </div>
           </div>
         </div>
 
-        <div className="input__section section">
-          <div className="section__container-individ">
-            <p className="section__p">Країна</p>
-            <input type="text" className="section__input" />
-          </div>
+        <HelpTypes />
 
-          <div className="section__container">
-            <div className="section__container-individ">
-              <p className="section__p">Місто</p>
-              <input type="text" className="section__input" />
-            </div>
-            <div className="section__container-individ">
-              <p className="section__p">Штат, район</p>
-              <input type="text" className="section__input" />
-            </div>
-          </div>
-
-          <div className="section__container-individ">
-            <p className="section__p">Адреса</p>
-            <input type="text" className="section__input" />
-          </div>
-
-          <div className="section__container">
-            <div className="section__container-individ">
-              <p className="section__p">Поштовий індекс</p>
-              <input type="text" className="section__input" />
-            </div>
-            <div className="section__container-individ"></div>
-          </div>
-        </div>
-
+        <button className="input__button" type="submit">Допомогти</button>
       </div>
-    </div>
+    </form>
+
   )
 };

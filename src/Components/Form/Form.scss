@@ -1,3 +1,5 @@
+@import '../../Utils/variables';
+
 .form {
   display: flex;
   flex-direction: column;
@@ -6,11 +8,10 @@
   margin: 0 auto 48px;
   width: 1200px;
 
-
   &__title {
     margin-bottom: 24px;
-    color: #343d5b;
-    font-size: 60px;
+    color: $color-mainViolet;
+    font-size: 48px;
   }
 }
 
@@ -22,9 +23,11 @@
     padding: 8px 12px;
     cursor: pointer;
     font-family: Geometria;
-    background-color: #fff;
-    color: #343d5b;
-    border: 2px solid #343d5b;
+    color: $color-mainViolet;
+    background-color: $color-white;
+    border: 2px solid $color-mainViolet;
+
+    transition: 0.3s;
   }
 
   &__button-l {
@@ -36,20 +39,48 @@
   }
 
   &__button--active {
-    background-color: #343d5b;
-    color: #fff;
+    color: $color-white;
+    background-color: $color-mainViolet;
   }
 }
 
 .input {
   display: flex;
   justify-content: space-between;
+
+  margin-bottom: 24px;
   width: 940px;
-  color: #9a9a9c;
+  color: $color-grey;
+
+  &__button {
+    width: 240px;
+    height: 60px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: $color-white;
+    border: 1px solid #ffffff00;
+    border-radius: 6px;
+    background: linear-gradient(90deg,#d14959,#b55271 51%,#8c699d);
+    box-shadow: 1px 1px 20px 3px rgba(250,25,25,0.75);
+    -webkit-box-shadow: 1px 1px 20px -2px rgba(250,25,25,0.75);
+    -moz-box-shadow: 1px 1px 20px 3px rgba(250,25,25,0.75);
+
+    transition: transform 0.3s;
+  }
+
+  &__button:hover {
+    transform: scale(110%);
+  }
 }
 
 .section {
   width: 372px;
+
+  &__p {
+    margin-bottom: 2px;
+    font-size: 12px;
+  }
 
   &__container{
     display: flex;
@@ -60,15 +91,16 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+  
     margin-bottom: 24px;
     font-size: 15px;
-
   }
 
   &__input {
     height: 28px;
-    background-color: #f3f6fb;
-    border: 1px solid transparent;
+    background-color: $color-whiteInput;
+    border: 1px solid $color-whiteInput;
     border-radius: 3px;
+    outline: none;
   }
 }

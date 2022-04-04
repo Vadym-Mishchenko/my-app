@@ -1,15 +1,16 @@
+@import '../../Utils/variables';
+
 .help {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto 48px;
-  width: 1200px;
 
-  color: #343d5b;
+  width: 1200px;
+  color: $color-mainViolet;
 
   &__title {
     margin-bottom: 8px;
-    font-size: 60px;
+    font-size: 48px;
   }
 
   &__p {
@@ -19,14 +20,16 @@
   }
 
   &__type {
-    margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
+
+    margin-bottom: 24px;
     width: 940px;
   }
 
   &__container {
     display: flex;
+
     column-gap: 18px;
     cursor: pointer;
     color: #dbdddd;
@@ -74,13 +77,14 @@
   }
 
   &__type-icon--active {
-    background-color: #8e6591cb;
+    background-color: $color-violetActive;
     border: 1px solid #ffffff00;
   }
 
   &__type-name {
     display: flex;
     align-items: center;
+
     width: 98px;
     height: 64px;
     font-size: 14px;
@@ -88,32 +92,21 @@
   }
 
   &__type-name--active {
-    color: #343d5b;
+    color: $color-mainViolet;
   }
 
   &__payment-choice {
     margin-bottom: 48px;
-  }
 
-  &__button {
-    width: 240px;
-    height: 60px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    border: 1px solid #ffffff00;
-    border-radius: 6px;
-    background: linear-gradient(90deg,#d14959,#b55271 51%,#8c699d);
-    box-shadow: 1px 1px 20px 3px rgba(250,25,25,0.75);
-    -webkit-box-shadow: 1px 1px 20px -2px rgba(250,25,25,0.75);
-    -moz-box-shadow: 1px 1px 20px 3px rgba(250,25,25,0.75);
-
-    transition: transform 0.3s;
-  }
-
-  &__button:hover {
-    transform: scale(110%);
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 200px;
+      left: 267px;
+      border: 20px solid transparent;
+      border-bottom-color: $color-white;
+      filter: drop-shadow(0 -0.06px 0.06px $color-greyCard);
+    }
   }
 }
 
@@ -122,12 +115,13 @@
   display: flex;
   width: 940px;
   height: 200px;
-  border: 1px solid #9a9a9c;
-  border-radius: 6px;
+  border: 1px solid $color-greyCard;
+  border-radius: 12px;
 
   &__left {
     display: flex;
     flex-wrap: wrap;
+  
     width: 470px;
     height: 200px;
     border-radius: 6px;
@@ -135,22 +129,26 @@
 
   &__left-text {
     position: absolute;
-    color: #9a9a9c;
+    left: 20px;
+    top: 5px;
+    font-size: 12px;
+    color: $color-grey;
   }
 
   &__left-card {
     display: flex;
     align-items: center;
     justify-content: center;
+  
     margin-top: 25px;
     margin-left: 20px;
     width: 120px;
     height: 60px;
     cursor: pointer;
-    background-color: #d4dae6;
+    background-color: $color-greyCard;
     border-radius: 6px;
 
-    transition: transform 0.3s;
+    transition: all 0.3s;
   }
   
   &__left-card:hover {
@@ -158,11 +156,11 @@
   }
 
   &__left-card--active {
-    background-color: #8e6591cb;
+    background-color: $color-violetActive;
   }
 
   &__left-title {
-    color: #fff;
+    color: $color-white;
   }
 
   &__right {
@@ -173,18 +171,21 @@
 
   &__right-text {
     position: absolute;
-    color: #9a9a9c;
+    right: 212px;
+    top: 5px;
+    font-size: 12px;
+    color: $color-grey;
   }
 
   &__right-card {
     margin-top: 30px;
     margin-left: 120px;
-    box-sizing: border-box;
     padding: 30px 20px 20px;
+    box-sizing: border-box;
     width: 320px;
     height: 150px;
     border-radius: 6px;
-    background-color: #d4dae6;
+    background-color: $color-greyCard;
   }
 }
 
@@ -203,16 +204,17 @@
 
   &__number {
     font-size: 12px;
-    color: #fff;
+    color: $color-white;
   }
 
   &__number-input {
     margin-bottom: 24px;
     height: 24px;
     width: 60px;
-    background-color: #f3f6fb;
+    background-color: $color-whiteInput;
     border: 1px solid transparent;
     border-radius: 3px;
+    outline: none;
   }
 
   &__container {
@@ -223,28 +225,30 @@
   &__term-p {
     margin-bottom: 4px;
     font-size: 12px;
-    color: #fff;
+    color: $color-white;
   }
 
   &__term-input {
     height: 24px;
     width: 110px;
-    background-color: #f3f6fb;
+    background-color: $color-whiteInput;
     border: 1px solid transparent;
     border-radius: 3px;
+    outline: none;
   }
 
   &__cvv-p {
     margin-bottom: 4px;
     font-size: 12px;
-    color: #fff;
+    color: $color-white;
   }
 
   &__cvv-input {
     height: 24px;
     width: 110px;
-    background-color: #f3f6fb;
+    background-color: $color-whiteInput;
     border: 1px solid transparent;
     border-radius: 3px;
+    outline: none;
   }
 }
