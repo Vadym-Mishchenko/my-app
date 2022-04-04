@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.a0fdd990.css",
+    "main.css": "/my-app/static/css/main.e20b3536.css",
     "main.js": "/my-app/static/js/main.09eb1c6c.js",
     "static/js/787.28cb0dcd.chunk.js": "/my-app/static/js/787.28cb0dcd.chunk.js",
     "static/media/Geometria.ttf": "/my-app/static/media/Geometria.0db3c3ee492d73b6c683.ttf",
@@ -8,12 +8,12 @@
     "static/media/Geometria-Bold.ttf": "/my-app/static/media/Geometria-Bold.f9fb6a8803ccecf46a2a.ttf",
     "static/media/Geometria-ExtraBold.ttf": "/my-app/static/media/Geometria-ExtraBold.d5689a0884aa3e43fbce.ttf",
     "index.html": "/my-app/index.html",
-    "main.a0fdd990.css.map": "/my-app/static/css/main.a0fdd990.css.map",
+    "main.e20b3536.css.map": "/my-app/static/css/main.e20b3536.css.map",
     "main.09eb1c6c.js.map": "/my-app/static/js/main.09eb1c6c.js.map",
     "787.28cb0dcd.chunk.js.map": "/my-app/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0fdd990.css",
+    "static/css/main.e20b3536.css",
     "static/js/main.09eb1c6c.js"
   ]
 }
