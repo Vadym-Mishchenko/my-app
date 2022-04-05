@@ -14,19 +14,20 @@
     font-size: 48px;
   }
 
-  @media (min-width:320px) {
+  @media (max-width:768px) {
     & {
+      width: 500px;
+    }
+  }
+
+  @media (max-width:320px) {
+    & {
+      margin: 0 auto;
       width: 320px;
     }
 
     &__title {
       font-size: 34px;
-    }
-  }
-
-  @media (max-width:768px) {
-    & {
-      width: 500px;
     }
   }
 }

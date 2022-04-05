@@ -4,19 +4,25 @@ import { numberCheck } from "../Form/Form";
 
 import './HelpTypes.scss';
 
-export const HelpTypes = () => {
+export const HelpTypes = ({
+  number_1,
+  number_2,
+  number_3,
+  number_4,
+  setNumber_1,
+  setNumber_2,
+  setNumber_3,
+  setNumber_4,
+  pass,
+  setPass,
+  dateInput,
+  setDateInput,
+}) => {
   const [isVisa, setIsVisa] = useState(false);
   const [isPrivat, setIsPrivat] = useState(true);
   const [isTerminal, setIsTerminal] = useState(false);
   const [isWebMoney, setIsWebMoney] = useState(false);
   const [isPayPal, setIsPayPal] = useState(false);
-
-  const [number_1, setNumber_1] = useState('');
-  const [number_2, setNumber_2] = useState('');
-  const [number_3, setNumber_3] = useState('');
-  const [number_4, setNumber_4] = useState('');
-  const [pass, setPass] = useState('');
-  const [dateInput, setDateInput] = useState('');
 
   const dateCheck = (event) => {
     if (event.target.value.length === 2) {

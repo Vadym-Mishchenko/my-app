@@ -17,7 +17,48 @@ export const Form = () => {
   const [isEntityPerson, setIsEntityPerson] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [indexNumber, setIndexNumber] = useState('');
+  const [inputName, setInputName] = useState('');
+  const [inputSurename, setInputSurename] = useState('');
+  const [inputEmail, setInputEmail] = useState('');
+  const [inputCompany, setInputCompany] = useState('');
+  const [inputCountry, setInputCountry] = useState('');
+  const [inputCity, setInputCity] = useState('');
+  const [inputState, setInputState] = useState('');
+  const [inputAdres, setInputAdres] = useState('');
+  const [number_1, setNumber_1] = useState('');
+  const [number_2, setNumber_2] = useState('');
+  const [number_3, setNumber_3] = useState('');
+  const [number_4, setNumber_4] = useState('');
+  const [pass, setPass] = useState('');
+  const [dateInput, setDateInput] = useState('');
 
+  const charCheck = (event, changer) => {
+      changer(event.target.value);
+  };
+
+  const clearForm = () => {
+    setInputName('');
+    setInputSurename('');
+    setInputCompany('');
+    setPhoneNumber('');
+    setIndexNumber('');
+    setInputEmail('');
+    setInputCountry('');
+    setInputCity('');
+    setInputState('');
+    setInputAdres('');
+    setNumber_1('');
+    setNumber_2('');
+    setNumber_3('');
+    setNumber_4('');
+    setPass('');
+    setDateInput('');
+  };
+
+  const buttonSubmit = () => {
+    alert(`${inputName} ${inputSurename} дякуємо за допомогу :`)
+    clearForm()
+  }
 
   const resetPerson = () => {
     setIsPhysicalPerson(false);
@@ -25,7 +66,10 @@ export const Form = () => {
   };
 
   return (
-    <form action="#" method="post">
+    <form action="#" method="post" onSubmit={(event) => {
+      event.preventDefault();
+      buttonSubmit();
+    }}>
       <div className="form">
         <h1 className="form__title">Заповнiть форму</h1>
         <div className="form__buttons buttons">
@@ -73,6 +117,10 @@ export const Form = () => {
                   className="section__input"
                   type="text"
                   required
+                  value={inputName}
+                  onChange={(event) => {
+                    charCheck(event, setInputName)
+                  }}
                 />
               </div>
               <div className="section__container-individ">
@@ -81,6 +129,10 @@ export const Form = () => {
                   className="section__input"
                   type="text"
                   required
+                  value={inputSurename}
+                  onChange={(event) => {
+                    charCheck(event, setInputSurename)
+                  }}
                 />
               </div>
             </div>
@@ -91,6 +143,10 @@ export const Form = () => {
                 className="section__input"
                 type="text"
                 required
+                value={inputCompany}
+                onChange={(event) => {
+                  charCheck(event, setInputCompany)
+                }}
               />
               <p className="section__logo">+ Логотип</p>
               
@@ -102,6 +158,10 @@ export const Form = () => {
                 className="section__input"
                 type="email"
                 required
+                value={inputEmail}
+                onChange={(event) => {
+                  charCheck(event, setInputEmail)
+                }}
               />
             </div>
 
@@ -126,6 +186,10 @@ export const Form = () => {
                 className="section__input"
                 type="text"
                 required
+                value={inputCountry}
+                onChange={(event) => {
+                  charCheck(event, setInputCountry)
+                }}
               />
             </div>
 
@@ -136,6 +200,10 @@ export const Form = () => {
                   className="section__input"
                   type="text"
                   required
+                  value={inputCity}
+                  onChange={(event) => {
+                    charCheck(event, setInputCity)
+                  }}
                 />
               </div>
               <div className="section__container-individ">
@@ -144,6 +212,10 @@ export const Form = () => {
                   className="section__input"
                   type="text"
                   required
+                  value={inputState}
+                  onChange={(event) => {
+                    charCheck(event, setInputState)
+                  }}
                 />
               </div>
             </div>
@@ -154,6 +226,10 @@ export const Form = () => {
                 className="section__input"
                 type="text"
                 required
+                value={inputAdres}
+                onChange={(event) => {
+                  charCheck(event, setInputAdres)
+                }}
               />
             </div>
 
@@ -175,10 +251,27 @@ export const Form = () => {
           </div>
         </div>
 
-        <HelpTypes />
+        <HelpTypes
+          number_1={number_1}
+          setNumber_1={setNumber_1}
+          number_2={number_2}
+          setNumber_2={setNumber_2}
+          number_3={number_3}
+          setNumber_3={setNumber_3}
+          number_4={number_4}
+          setNumber_4={setNumber_4}
+          pass={pass}
+          setPass={setPass}
+          dateInput={dateInput}
+          setDateInput={setDateInput}
+        />
 
-        <button className="input__button"
-        >Допомогти</button>
+        <button
+          className="input__button"
+          type="submit"
+        >
+          Допомогти
+        </button>
       </div>
     </form>
   )

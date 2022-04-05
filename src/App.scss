@@ -11,4 +11,8 @@ p{
 
 .app {
   font-family: Geometria;
+
+  @media (max-width:320px) {
+    overflow: hidden;
+  }
 }
