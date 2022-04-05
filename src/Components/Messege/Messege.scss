@@ -1,8 +1,14 @@
 .messege {
-  margin-bottom: 48px;
+  margin: 0 auto 48px;
   text-align: center;
   height: 48px;
   line-height: 48px;
   color: #fff;
   background-color: #000;
+  
+  @media (max-width:320px) {
+    display: none;
+  }
 }
+
+

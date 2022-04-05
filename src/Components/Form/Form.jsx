@@ -92,6 +92,8 @@ export const Form = () => {
                 type="text"
                 required
               />
+              <p className="section__logo">+ Логотип</p>
+              
             </div>
 
             <div className="section__container-individ">
@@ -175,9 +177,9 @@ export const Form = () => {
 
         <HelpTypes />
 
-        <button className="input__button" type="submit">Допомогти</button>
+        <button className="input__button"
+        >Допомогти</button>
       </div>
     </form>
-
   )
 };
