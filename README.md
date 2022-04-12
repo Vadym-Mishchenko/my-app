@@ -1,4 +1,4 @@
-# Quantiti Coders TT
+# Quanti Coders TT
 
 ## Link
 - [DEMO LINK](https://vadym-mishchenko.github.io/my-app/)
